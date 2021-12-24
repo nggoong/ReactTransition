@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import SkillDiv from './components/SkillDiv';
 
 function App() {
+
+  const skills = [
+    {
+      name:'javascript',
+      per:'90'
+    },
+    {
+      name:'python',
+      per:'70'
+    },
+    {
+      name:'mysql',
+      per:'30'
+    },
+    {
+      name:'html',
+      per:'60'
+    },
+    {
+      name:'css',
+      per:'75'
+    },
+    {
+      name:'React',
+      per:'80'
+    },
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='skill-container'>
+        {skills.map((skill, index)=>{return(<SkillDiv key={index} skillname={skill.name} skillper={skill.per}></SkillDiv>)})}
+      </div>    
+    </>
+
   );
 }
 
