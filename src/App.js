@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import SkillDiv from './components/SkillDiv';
+import SkillContainer from './components/SkillContainer';
 
 function App() {
 
@@ -33,9 +33,7 @@ function App() {
 
   return (
     <>
-      <div className='skill-container'>
-        {skills.map((skill, index)=>{return(<SkillDiv key={index} skillname={skill.name} skillper={skill.per}></SkillDiv>)})}
-      </div>    
+      <SkillContainer skills={skills}></SkillContainer>
     </>
 
   );
